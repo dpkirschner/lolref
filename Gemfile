@@ -22,6 +22,8 @@ gem 'turbolinks'
 gem 'sdoc',                 '>= 0.4.0', group: :doc
 # Optional fast JSON parser.
 gem "oj", platforms: :ruby
+# active has
+gem 'active_hash'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
