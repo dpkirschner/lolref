@@ -1,6 +1,7 @@
 <% provide(:title, "Champion Index") %>
 <h1>Champion Index</h1>
 
+<div id="champion-details-template"></div>
 <table id="champion-table" class="table table-hover">
   <thead>
     <tr>
@@ -22,6 +23,13 @@
 <script type="text/javascript">
 $("#champion-table > tbody > tr").click(
 	function(){
-		window.location.href = '/champion/' + $(this).attr('id');
+		$.getJSON( "/champion/condensed/"+$(this).attr('id'), function(data){
+			mine = $("champion-details-template").clone();
+			mine.attr("id", "#champion-details-"+data.attributes.id);
+			//build clone
+			mine.html = data.attributes.name;
+			mine.insertAfter($("champion-details-template"));
+			//clone.toggleClass("hidden");
+		});
 	});
 </script>
