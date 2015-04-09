@@ -1,16 +1,19 @@
-<h1>Listing users</h1>
-
-<table>
+<% provide(:title, "Champion Index") %>
+<h1>Champion Index</h1>
+<table class="table table-striped">
   <thead>
     <tr>
+	  <th>#</th>
       <th>Name</th>
-      <th colspan="3"></th>
+	  <th>Title</th>
     </tr>
   </thead>
 
 <% @champions.each do |champion| %>
   <tr>
-    <td><%= champion.name %> <%= champion.title %> <%= champion.id %></td>
+    <td><%= champion.id %></td>
+    <td><%= champion.name %></td>
+    <td><%= champion.title %></td>
   </tr>
 <% end %>
 </table>
