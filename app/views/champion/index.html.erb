@@ -1,6 +1,7 @@
 <% provide(:title, "Champion Index") %>
 <h1>Champion Index</h1>
-<table class="table table-striped">
+
+<table id="champion-table" class="table table-hover">
   <thead>
     <tr>
 	  <th>#</th>
@@ -10,10 +11,17 @@
   </thead>
 
 <% @champions.each do |champion| %>
-  <tr>
+  <tr id="<%= champion.id %>">
     <td><%= champion.id %></td>
     <td><%= champion.name %></td>
     <td><%= champion.title %></td>
   </tr>
 <% end %>
 </table>
+
+<script type="text/javascript">
+$("#champion-table > tbody > tr").click(
+	function(){
+		window.location.href = '/champion/' + $(this).attr('id');
+	});
+</script>

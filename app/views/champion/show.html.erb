@@ -1,14 +1,41 @@
-<h1>showing users</h1>
+<% provide(:title, @champion.name ) %>
+<h1><%= @champion.name %> <%= @champion.title %></h1>
 
-<table>
+<!--default skin image -->
+
+<h3>Abilities</h3>
+<table id="champion-table" class="table table-striped">
   <thead>
-    <tr>
-      <th>Champion Name</th>
-      <th colspan="3"></th>
-    </tr>
   </thead>
-
   <tr>
-    <td><%= @champion.name %> <%= @champion.title %> <%= @champion.id %></td>
+    <td>Passive</td>
+    <td>image</td>
+    <td>ability text</td>
+	<td>id</td>
+  </tr>
+  <tr>
+    <td>Q</td>
+    <td>image</td>
+    <td>ability text</td>
+	<td>id</td>
+  </tr>
+  <tr>
+    <td>W</td>
+    <td>image</td>
+    <td>ability text</td>
+	<td>id</td>
+  </tr>
+  <tr>
+    <td>E</td>
+    <td>image</td>
+    <td>ability text</td>
+	<td>id</td>
+  </tr>
+  <tr>
+    <td>R</td>
+    <td>image</td>
+    <td>ability text</td>
+	<td>id</td>
   </tr>
 </table>
+
